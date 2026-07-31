@@ -21,11 +21,11 @@ function getAngleType(angle) {
   }
   else if (angle === 90){
     return "Right angle"
-  } else if(angle < 180){
+  } else if(angle > 90 && angle < 180){
     return "Obtuse angle"
-  } else if(degree === 180){
+  } else if(angle === 180){
     return "Straight angle"
-  } else if(degree < 360) {
+  } else if(angle > 180 && angle < 360) {
     return "Reflex angle"
   } else  return "Invalid angle"
 
@@ -49,3 +49,19 @@ function assertEquals(actualOutput, targetOutput) {
 const right = getAngleType(90);
 assertEquals(right, "Right angle");
 console.log(getAngleType(45))
+
+const acute = getAngleType(45);
+assertEquals(acute, "Acute angle");
+
+const obtuse = getAngleType(170);
+assertEquals(obtuse, "Obtuse angle");
+
+const straight = getAngleType(180);
+assertEquals(straight, "Straight angle");
+
+const reflex = getAngleType(300);
+assertEquals(reflex, "Reflex angle");
+
+const invalid = getAngleType(-10);
+assertEquals(invalid, "Invalid angle");
+
