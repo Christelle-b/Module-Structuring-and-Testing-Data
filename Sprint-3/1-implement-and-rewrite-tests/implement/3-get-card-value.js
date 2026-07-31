@@ -23,6 +23,18 @@
 
 function getCardValue(card) {
   // TODO: Implement this function
+  const cardNum = card.slice(0, -1);
+  if(cardNum === "A"){
+    return 11;
+  } else if (cardNum === "J" || cardNum === "Q" || cardNum === "K"){
+    return 10;
+  }
+  
+  const num = Number(cardNum)
+    if(num>= 2 && num<= 9){
+      return num;
+    }
+    throw new Error("Invalid card");
 }
 
 // The line below allows us to load the getCardValue function into tests in other files.
